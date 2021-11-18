@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import java.util.List;
 import java.util.Set;
 import java.util.UUID;
 
@@ -43,7 +44,7 @@ public class MitigationStep {
     private AppliedOn appliedOn;
 
     @OneToMany(mappedBy = "mitigation_step")
-    private Set<MitigationSource> mitigationSources;
+    private List<MitigationSource> mitigationSources;
 
     @Column(name = "suspect_points")
     private String[] suspectPoints;
@@ -55,17 +56,15 @@ public class MitigationStep {
     private Boolean  informative;
 
 
+    @ManyToOne
+    @JoinColumn(name = "alarm_mitigation_configuration_id")
+    private AlarmMitigationConfig alarm_mitigation_configuration;
 
-    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    @JoinColumn(name = "alarm_mitigation_configuration_id",referencedColumnName="id")
-    private AlarmMitigationConfig alarmMitigationConfig;
-
-
-    public AlarmMitigationConfig getAlarm_configuration() {
-        return  alarmMitigationConfig;
+    public AlarmMitigationConfig getAlarm_mitigation_configuration() {
+        return alarm_mitigation_configuration;
     }
 
-    public void setAlarm_configuration(AlarmMitigationConfig alarm_configuration) {
-        this.alarmMitigationConfig = alarm_configuration;
+    public void setAlarm_mitigation_configuration(AlarmMitigationConfig alarm_mitigation_configuration) {
+        this.alarm_mitigation_configuration = alarm_mitigation_configuration;
     }
 }

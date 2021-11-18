@@ -3,17 +3,14 @@ package com.nectar.alarm.beans;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.nectar.alarm.enums.Status;
-import com.vladmihalcea.hibernate.type.json.JsonBinaryType;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.GenericGenerator;
-import org.hibernate.annotations.TypeDef;
-import org.hibernate.annotations.TypeDefs;
+
 
 import javax.persistence.*;
 import java.util.List;
-import java.util.Set;
 import java.util.UUID;
 
 @Entity
@@ -59,12 +56,9 @@ public class AlarmMitigationConfig {
     @Column(name = "updated_by")
     private String updatedBy;
 
-    @OneToMany(fetch = FetchType.EAGER, mappedBy = "alarm_configuration", cascade = CascadeType.ALL)
+    @OneToMany(fetch = FetchType.EAGER, mappedBy = "alarm_mitigation_configuration", cascade = CascadeType.ALL)
     @JsonIgnoreProperties("alarm_mitigation_configuration")
     private List<MitigationStep> mitigationSteps;
-
-
-
 
 
 }

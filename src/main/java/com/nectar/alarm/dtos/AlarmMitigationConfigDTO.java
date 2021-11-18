@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.Set;
 import java.util.UUID;
 
-public class AlarmConfigDTO {
+public class AlarmMitigationConfigDTO {
 
 
     private UUID id;
@@ -137,7 +137,5 @@ public class AlarmConfigDTO {
         this.mitigationSteps = mitigationSteps;
     }
 
-    public AlarmConfigDTO() {
-        super();
-    }
+
 }

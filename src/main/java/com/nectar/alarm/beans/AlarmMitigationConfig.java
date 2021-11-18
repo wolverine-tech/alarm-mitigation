@@ -17,13 +17,12 @@ import java.util.Set;
 import java.util.UUID;
 
 @Entity
-@Table(name = "alarm_configuration")
+@Table(name = "alarm_mitigation_configuration")
 @Builder()
 @NoArgsConstructor
 @AllArgsConstructor
-@TypeDefs({ @TypeDef(name = "jsonb", typeClass = JsonBinaryType.class) })
 
-public class AlarmConfig {
+public class AlarmMitigationConfig {
     @Id
     @GeneratedValue(generator = "UUID")
     @GenericGenerator(name = "UUID", strategy = "org.hibernate.id.UUIDGenerator")
@@ -61,7 +60,7 @@ public class AlarmConfig {
     private String updatedBy;
 
     @OneToMany(fetch = FetchType.EAGER, mappedBy = "alarm_configuration", cascade = CascadeType.ALL)
-    @JsonIgnoreProperties("alarm_configuration")
+    @JsonIgnoreProperties("alarm_mitigation_configuration")
     private List<MitigationStep> mitigationSteps;
 
 

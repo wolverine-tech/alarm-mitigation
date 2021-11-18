@@ -1,17 +1,12 @@
 package com.nectar.alarm.beans;
 
 import com.nectar.alarm.enums.AppliedOn;
-import com.sun.xml.internal.fastinfoset.util.StringArray;
-import com.vladmihalcea.hibernate.type.json.JsonBinaryType;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.GenericGenerator;
-import org.hibernate.annotations.TypeDef;
-import org.hibernate.annotations.TypeDefs;
 
 import javax.persistence.*;
-import java.util.List;
 import java.util.Set;
 import java.util.UUID;
 
@@ -62,15 +57,15 @@ public class MitigationStep {
 
 
     @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    @JoinColumn(name = "alarm_configuration_id",referencedColumnName="id")
-    private AlarmConfig alarm_configuration;
+    @JoinColumn(name = "alarm_mitigation_configuration_id",referencedColumnName="id")
+    private AlarmMitigationConfig alarmMitigationConfig;
 
 
-    public AlarmConfig getAlarm_configuration() {
-        return alarm_configuration;
+    public AlarmMitigationConfig getAlarm_configuration() {
+        return  alarmMitigationConfig;
     }
 
-    public void setAlarm_configuration(AlarmConfig alarm_configuration) {
-        this.alarm_configuration = alarm_configuration;
+    public void setAlarm_configuration(AlarmMitigationConfig alarm_configuration) {
+        this.alarmMitigationConfig = alarm_configuration;
     }
 }

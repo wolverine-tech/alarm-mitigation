@@ -21,4 +21,5 @@ public class AlarmMitigationConfigController {
     public AlarmMitigationConfig create(@RequestBody AlarmMitigationConfigDTO alarmConfigDTO) {
         return alarmMitigationService.save(alarmConfigDTO);
     }
+
 }

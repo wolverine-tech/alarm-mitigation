@@ -34,15 +34,16 @@ public class MitigationSource {
     @Column(name = "path")
     private String path;
 
+
     @ManyToOne
     @JoinColumn(name = "mitigation_step_id")
-    private MitigationStep mitigationStep;
+    private MitigationStep mitigation_step;
 
     public MitigationStep getMitigation_step() {
-        return mitigationStep;
+        return mitigation_step;
     }
 
-    public void setMitigation_step(MitigationStep mitigationStep) {
-        this.mitigationStep = mitigationStep;
+    public void setMitigation_step(MitigationStep mitigation_step) {
+        this.mitigation_step = mitigation_step;
     }
 }

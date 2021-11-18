@@ -25,7 +25,7 @@ public class MitigationStepDTO {
 
     private AppliedOn appliedOn;
 
-    private List<MitigationSource> mitigationSources;
+    private List<MitigationSource> source;
 
     private String[] suspectPoints;
 

@@ -58,7 +58,7 @@ public class AlarmMitigationConfig {
 
     @OneToMany(fetch = FetchType.EAGER, mappedBy = "alarm_mitigation_configuration", cascade = CascadeType.ALL)
     @JsonIgnoreProperties("alarm_mitigation_configuration")
-    private List<MitigationStep> mitigationSteps;
+    private List<MitigationStep> steps;
 
 
 }

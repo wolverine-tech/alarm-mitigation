@@ -44,7 +44,7 @@ public class MitigationStep {
     private AppliedOn appliedOn;
 
     @OneToMany(mappedBy = "mitigation_step")
-    private List<MitigationSource> mitigationSources;
+    private List<MitigationSource> source;
 
     @Column(name = "suspect_points")
     private String[] suspectPoints;

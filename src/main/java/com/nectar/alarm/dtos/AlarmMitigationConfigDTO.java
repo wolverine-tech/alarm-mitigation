@@ -39,7 +39,7 @@ public class AlarmMitigationConfigDTO {
 
     private String updatedBy;
 
-    private List<MitigationStep> mitigationSteps;
+    private List<MitigationStep> steps;
 
     public UUID getId() {
         return id;
@@ -129,13 +129,11 @@ public class AlarmMitigationConfigDTO {
         this.updatedBy = updatedBy;
     }
 
-    public List<MitigationStep> getMitigationSteps() {
-        return mitigationSteps;
+    public List<MitigationStep> getSteps() {
+        return steps;
     }
 
-    public void setMitigationSteps(List<MitigationStep> mitigationSteps) {
-        this.mitigationSteps = mitigationSteps;
+    public void setSteps(List<MitigationStep> steps) {
+        this.steps = steps;
     }
-
-
 }
